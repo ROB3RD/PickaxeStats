@@ -4,13 +4,13 @@ import me.rob3rd.pickaxestats.PickaxeStats;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.ItemFlag;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Objects;
-
-import org.bukkit.inventory.ItemStack;
 
 public class StatsUtils {
     public static ItemStack updatePickaxe(ItemStack item, int netherite, int diamonds, int gold, int iron, int redstone, int lapis, int coal, int stone, int cobblestone) {
@@ -28,23 +28,40 @@ public class StatsUtils {
         lore.add("§a" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "coal").toUpperCase() + " §7» §f" + coal);
         lore.add("§a" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "stone").toUpperCase() + " §7» §f" + stone);
         lore.add("§a" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "cobblestone").toUpperCase() + " §7» §f" + cobblestone);
-        assert meta != null;
-        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
-        if (item.getType() == Material.NETHERITE_PICKAXE) {
-            meta.setDisplayName("§f§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "netherite pickaxe").toUpperCase());
-        }else if (item.getType() == Material.DIAMOND_PICKAXE) {
-            meta.setDisplayName("§f§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "diamond pickaxe").toUpperCase());
-        }else if (item.getType() == Material.IRON_PICKAXE) {
-            meta.setDisplayName("§f§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "iron pickaxe").toUpperCase());
-        }else if(item.getType() == Material.GOLDEN_PICKAXE) {
-            meta.setDisplayName("§f§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "golden pickaxe").toUpperCase());
-        }else if (item.getType() == Material.STONE_PICKAXE) {
-            meta.setDisplayName("§f§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "stone pickaxe").toUpperCase());
-        }else if (item.getType() == Material.WOODEN_PICKAXE) {
-            meta.setDisplayName("§f§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "wooden pickaxe").toUpperCase());
+        if (meta != null) {
+            meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         }
-        meta.setLore(lore);
-        meta.setLocalizedName("pickaxe");
+        if (item.getType() == Material.NETHERITE_PICKAXE) {
+            if (meta != null) {
+                meta.setDisplayName("§f§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "netherite pickaxe").toUpperCase());
+            }
+        }else if (item.getType() == Material.DIAMOND_PICKAXE) {
+            if (meta != null) {
+                meta.setDisplayName("§f§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "diamond pickaxe").toUpperCase());
+            }
+        }else if (item.getType() == Material.IRON_PICKAXE) {
+            if (meta != null) {
+                meta.setDisplayName("§f§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "iron pickaxe").toUpperCase());
+            }
+        }else if(item.getType() == Material.GOLDEN_PICKAXE) {
+            if (meta != null) {
+                meta.setDisplayName("§f§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "golden pickaxe").toUpperCase());
+            }
+        }else if (item.getType() == Material.STONE_PICKAXE) {
+            if (meta != null) {
+                meta.setDisplayName("§f§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "stone pickaxe").toUpperCase());
+            }
+        }else if (item.getType() == Material.WOODEN_PICKAXE) {
+            if (meta != null) {
+                meta.setDisplayName("§f§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "wooden pickaxe").toUpperCase());
+            }
+        }
+        if (meta != null) {
+            meta.setLore(lore);
+        }
+        if (meta != null) {
+            meta.setLocalizedName("pickaxe");
+        }
         item.setItemMeta(meta);
         return item;
     }
