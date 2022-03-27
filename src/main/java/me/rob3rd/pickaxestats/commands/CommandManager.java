@@ -5,7 +5,6 @@ import me.rob3rd.pickaxestats.commands.cmds.LanguageCommand;
 import me.rob3rd.pickaxestats.commands.cmds.ReloadCommand;
 import me.rob3rd.pickaxestats.utils.ChatUtil;
 import me.rob3rd.pickaxestats.utils.LanguageFilesUtils;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;

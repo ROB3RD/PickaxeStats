@@ -16,7 +16,7 @@ public class StatsUtils {
     public static ItemStack updatePickaxe(ItemStack item, int netherite, int diamonds, int gold, int iron, int redstone, int lapis, int coal, int stone, int cobblestone) {
         PickaxeStats plugin = PickaxeStats.getInstance();
         final ItemMeta meta = item.getItemMeta();
-        final ArrayList<String> lore = new ArrayList<String>();
+        final ArrayList<String> lore = new ArrayList<>();
         lore.add(" ");
         lore.add("§e§l" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "stats").toUpperCase());
         lore.add("§a" + LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "netherite").toUpperCase() + " §7» §f" + netherite);
@@ -89,10 +89,11 @@ public class StatsUtils {
 
     public static int getCountOnPickaxe(ItemStack item, int index) {
         ItemMeta meta = item.getItemMeta();
-        if (meta.hasLore() && meta != null) {
+        if (meta != null && meta.hasLore()) {
             try {
                 return Integer.parseInt(ChatColor.stripColor(Objects.requireNonNull(meta.getLore()).get(index).split("»")[1].trim()));
-            }catch (ArrayIndexOutOfBoundsException ignored) {}
+            } catch (ArrayIndexOutOfBoundsException ignored) {
+            }
         }
         return 0;
     }

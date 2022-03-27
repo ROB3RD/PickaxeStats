@@ -14,8 +14,12 @@ public class MenuUtils implements Listener {
             if (inv.getItem(i) == null) {
                 ItemStack line = new ItemStack(m);
                 ItemMeta meta = line.getItemMeta();
-                meta.setLocalizedName("x");
-                meta.setDisplayName(" ");
+                if (meta != null) {
+                    meta.setLocalizedName("x");
+                }
+                if (meta != null) {
+                    meta.setDisplayName(" ");
+                }
                 line.setItemMeta(meta);
                 inv.setItem(i, line);
             }

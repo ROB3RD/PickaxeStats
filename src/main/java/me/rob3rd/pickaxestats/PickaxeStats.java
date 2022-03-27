@@ -10,6 +10,8 @@ import me.rob3rd.pickaxestats.utils.LanguageFilesUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public class PickaxeStats extends JavaPlugin {
 
     private static PickaxeStats instance;
@@ -24,7 +26,7 @@ public class PickaxeStats extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PickaxeUpgradeListener(), this);
         getServer().getPluginManager().registerEvents(new MenuUtils(), this);
         getServer().getPluginManager().registerEvents(new CreativeListener(), this);
-        getCommand("ps").setExecutor(new CommandManager());
+        Objects.requireNonNull(getCommand("ps")).setExecutor(new CommandManager());
         LanguageFilesUtils.loadValues();
     }
 
