@@ -13,15 +13,13 @@ public class ReloadCommand extends SubCommand {
     @Override
     public void onCommand(CommandSender sender, String[] args) {
         if (args.length > 1) {
-            if (sender instanceof Player) {
-                Player player = (Player) sender;
+            if (sender instanceof Player player) {
                 player.sendMessage(PickaxeStats.getInstance().prefix() + ChatColor.translateAlternateColorCodes('&', LanguageFilesUtils.getValue(PickaxeStats.getInstance().getConfig().getString("language"), "reloadcommandusage")));
             }
         }else {
             PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
             plugin.reloadConfig();
-            if (sender instanceof Player) {
-                Player player = (Player) sender;
+            if (sender instanceof Player player) {
                 player.sendMessage(plugin.prefix() + ChatColor.translateAlternateColorCodes('&', LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "reloadsuccess")));
             }
         }

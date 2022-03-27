@@ -192,10 +192,9 @@ public final class SkullCreator {
         notNull(item, "item");
         notNull(base64, "base64");
 
-        if (!(item.getItemMeta() instanceof SkullMeta)) {
+        if (!(item.getItemMeta() instanceof SkullMeta meta)) {
             return null;
         }
-        SkullMeta meta = (SkullMeta) item.getItemMeta();
         mutateItemMeta(meta, base64);
         item.setItemMeta(meta);
 
@@ -293,7 +292,7 @@ public final class SkullCreator {
             throw new RuntimeException(e);
         }
 
-        String toEncode = "{\"textures\":{\"SKIN\":{\"url\":\"" + actualUrl.toString() + "\"}}}";
+        String toEncode = "{\"textures\":{\"SKIN\":{\"url\":\"" + actualUrl + "\"}}}";
         return Base64.getEncoder().encodeToString(toEncode.getBytes());
     }
 

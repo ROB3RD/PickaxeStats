@@ -1,7 +1,7 @@
 package me.rob3rd.pickaxestats.menus;
 
 import me.rob3rd.pickaxestats.PickaxeStats;
-import me.rob3rd.pickaxestats.utils.LANGUAGE;
+import me.rob3rd.pickaxestats.utils.Language;
 import me.rob3rd.pickaxestats.utils.LanguageFilesUtils;
 import me.rob3rd.pickaxestats.utils.skullcrator.SkullCreator;
 import org.bukkit.Material;
@@ -15,16 +15,24 @@ public class LanguageItems {
         PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
         ItemStack en = SkullCreator.itemFromUrl("http://textures.minecraft.net/texture/cd91456877f54bf1ace251e4cee40dba597d2cc40362cb8f4ed711e50b0be5b3");
         ItemMeta meta = en.getItemMeta();
-        meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "english"));
+        if (meta != null) {
+            meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "english"));
+        }
         ArrayList<String> lore = new ArrayList<>();
-        if (LANGUAGE.en()) {
+        if (Language.en()) {
             lore.add(LanguageFilesUtils.getValue("english", "selected"));
-            meta.setLocalizedName("x");
+            if (meta != null) {
+                meta.setLocalizedName("x");
+            }
         }else {
             lore.add(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "CLICK to select"));
-            meta.setLocalizedName("english");
+            if (meta != null) {
+                meta.setLocalizedName("english");
+            }
         }
-        meta.setLore(lore);
+        if (meta != null) {
+            meta.setLore(lore);
+        }
         en.setItemMeta(meta);
         return en;
     }
@@ -32,16 +40,24 @@ public class LanguageItems {
         PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
         ItemStack ge = SkullCreator.itemFromUrl("http://textures.minecraft.net/texture/5e7899b4806858697e283f084d9173fe487886453774626b24bd8cfecc77b3f");
         ItemMeta meta = ge.getItemMeta();
-        meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "german"));
+        if (meta != null) {
+            meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "german"));
+        }
         ArrayList<String> lore = new ArrayList<>();
-        if (LANGUAGE.ge()) {
+        if (Language.ge()) {
             lore.add(LanguageFilesUtils.getValue("german", "selected"));
-            meta.setLocalizedName("x");
+            if (meta != null) {
+                meta.setLocalizedName("x");
+            }
         }else {
             lore.add(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "CLICK to select"));
-            meta.setLocalizedName("german");
+            if (meta != null) {
+                meta.setLocalizedName("german");
+            }
         }
-        meta.setLore(lore);
+        if (meta != null) {
+            meta.setLore(lore);
+        }
         ge.setItemMeta(meta);
         return ge;
     }
@@ -49,16 +65,24 @@ public class LanguageItems {
         PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
         ItemStack fr = SkullCreator.itemFromUrl("http://textures.minecraft.net/texture/cd91456877f54bf1ace251e4cee40dba597d2cc40362cb8f4ed711e50b0be5b3");
         ItemMeta meta = fr.getItemMeta();
-        meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "french"));
+        if (meta != null) {
+            meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "french"));
+        }
         ArrayList<String> lore = new ArrayList<>();
-        if (LANGUAGE.fr()) {
+        if (Language.fr()) {
             lore.add(LanguageFilesUtils.getValue("french", "selected"));
-            meta.setLocalizedName("x");
+            if (meta != null) {
+                meta.setLocalizedName("x");
+            }
         }else {
             lore.add(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "CLICK to select"));
-            meta.setLocalizedName("french");
+            if (meta != null) {
+                meta.setLocalizedName("french");
+            }
         }
-        meta.setLore(lore);
+        if (meta != null) {
+            meta.setLore(lore);
+        }
         fr.setItemMeta(meta);
         return fr;
     }
@@ -66,16 +90,24 @@ public class LanguageItems {
         PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
         ItemStack ch = SkullCreator.itemFromUrl("http://textures.minecraft.net/texture/cd91456877f54bf1ace251e4cee40dba597d2cc40362cb8f4ed711e50b0be5b3");
         ItemMeta meta = ch.getItemMeta();
-        meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "chinese"));
+        if (meta != null) {
+            meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "chinese"));
+        }
         ArrayList<String> lore = new ArrayList<>();
-        if (LANGUAGE.ch()) {
+        if (Language.ch()) {
             lore.add(LanguageFilesUtils.getValue("chinese", "selected"));
-            meta.setLocalizedName("x");
+            if (meta != null) {
+                meta.setLocalizedName("x");
+            }
         }else {
             lore.add(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "CLICK to select"));
-            meta.setLocalizedName("chinese");
+            if (meta != null) {
+                meta.setLocalizedName("chinese");
+            }
         }
-        meta.setLore(lore);
+        if (meta != null) {
+            meta.setLore(lore);
+        }
         ch.setItemMeta(meta);
         return ch;
     }
@@ -83,16 +115,24 @@ public class LanguageItems {
         PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
         ItemStack pi = new ItemStack(Material.PLAYER_HEAD, 2);
         ItemMeta meta = pi.getItemMeta();
-        meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "pinyin"));
+        if (meta != null) {
+            meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "pinyin"));
+        }
         ArrayList<String> lore = new ArrayList<>();
-        if (LANGUAGE.pi()) {
+        if (Language.pi()) {
             lore.add(LanguageFilesUtils.getValue("pinyin", "selected"));
-            meta.setLocalizedName("x");
+            if (meta != null) {
+                meta.setLocalizedName("x");
+            }
         }else {
             lore.add(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "CLICK to select"));
-            meta.setLocalizedName("pinyin");
+            if (meta != null) {
+                meta.setLocalizedName("pinyin");
+            }
         }
-        meta.setLore(lore);
+        if (meta != null) {
+            meta.setLore(lore);
+        }
         pi.setItemMeta(meta);
         return SkullCreator.itemWithUrl(pi, "http://textures.minecraft.net/texture/cd91456877f54bf1ace251e4cee40dba597d2cc40362cb8f4ed711e50b0be5b3");
     }
@@ -100,16 +140,24 @@ public class LanguageItems {
         PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
         ItemStack sp = SkullCreator.itemFromUrl("http://textures.minecraft.net/texture/cd91456877f54bf1ace251e4cee40dba597d2cc40362cb8f4ed711e50b0be5b3");
         ItemMeta meta = sp.getItemMeta();
-        meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "spanish"));
+        if (meta != null) {
+            meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "spanish"));
+        }
         ArrayList<String> lore = new ArrayList<>();
-        if (LANGUAGE.sp()) {
+        if (Language.sp()) {
             lore.add(LanguageFilesUtils.getValue("spanish", "selected"));
-            meta.setLocalizedName("x");
+            if (meta != null) {
+                meta.setLocalizedName("x");
+            }
         }else {
             lore.add(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "CLICK to select"));
-            meta.setLocalizedName("spanish");
+            if (meta != null) {
+                meta.setLocalizedName("spanish");
+            }
         }
-        meta.setLore(lore);
+        if (meta != null) {
+            meta.setLore(lore);
+        }
         sp.setItemMeta(meta);
         return sp;
     }
@@ -117,16 +165,24 @@ public class LanguageItems {
         PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
         ItemStack sw = SkullCreator.itemFromUrl("http://textures.minecraft.net/texture/cd91456877f54bf1ace251e4cee40dba597d2cc40362cb8f4ed711e50b0be5b3");
         ItemMeta meta = sw.getItemMeta();
-        meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "swedish"));
+        if (meta != null) {
+            meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "swedish"));
+        }
         ArrayList<String> lore = new ArrayList<>();
-        if (LANGUAGE.sw()) {
+        if (Language.sw()) {
             lore.add(LanguageFilesUtils.getValue("swedish", "selected"));
-            meta.setLocalizedName("x");
+            if (meta != null) {
+                meta.setLocalizedName("x");
+            }
         }else {
             lore.add(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "CLICK to select"));
-            meta.setLocalizedName("swedish");
+            if (meta != null) {
+                meta.setLocalizedName("swedish");
+            }
         }
-        meta.setLore(lore);
+        if (meta != null) {
+            meta.setLore(lore);
+        }
         sw.setItemMeta(meta);
         return sw;
     }
@@ -134,16 +190,24 @@ public class LanguageItems {
         PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
         ItemStack vi = SkullCreator.itemFromUrl("http://textures.minecraft.net/texture/cd91456877f54bf1ace251e4cee40dba597d2cc40362cb8f4ed711e50b0be5b3");
         ItemMeta meta = vi.getItemMeta();
-        meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "vietnamese"));
+        if (meta != null) {
+            meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "vietnamese"));
+        }
         ArrayList<String> lore = new ArrayList<>();
-        if (LANGUAGE.vi()) {
+        if (Language.vi()) {
             lore.add(LanguageFilesUtils.getValue("vietnamese", "selected"));
-            meta.setLocalizedName("x");
+            if (meta != null) {
+                meta.setLocalizedName("x");
+            }
         }else {
             lore.add(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "CLICK to select"));
-            meta.setLocalizedName("vietnamese");
+            if (meta != null) {
+                meta.setLocalizedName("vietnamese");
+            }
         }
-        meta.setLore(lore);
+        if (meta != null) {
+            meta.setLore(lore);
+        }
         vi.setItemMeta(meta);
         return vi;
     }
@@ -151,16 +215,24 @@ public class LanguageItems {
         PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
         ItemStack po = SkullCreator.itemFromUrl("http://textures.minecraft.net/texture/cd91456877f54bf1ace251e4cee40dba597d2cc40362cb8f4ed711e50b0be5b3");
         ItemMeta meta = po.getItemMeta();
-        meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "polish"));
+        if (meta != null) {
+            meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "polish"));
+        }
         ArrayList<String> lore = new ArrayList<>();
-        if (LANGUAGE.po()) {
+        if (Language.po()) {
             lore.add(LanguageFilesUtils.getValue("polish", "selected"));
-            meta.setLocalizedName("x");
+            if (meta != null) {
+                meta.setLocalizedName("x");
+            }
         }else {
             lore.add(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "CLICK to select"));
-            meta.setLocalizedName("polish");
+            if (meta != null) {
+                meta.setLocalizedName("polish");
+            }
         }
-        meta.setLore(lore);
+        if (meta != null) {
+            meta.setLore(lore);
+        }
         po.setItemMeta(meta);
         return po;
     }
@@ -168,16 +240,24 @@ public class LanguageItems {
         PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
         ItemStack hu = SkullCreator.itemFromUrl("http://textures.minecraft.net/texture/cd91456877f54bf1ace251e4cee40dba597d2cc40362cb8f4ed711e50b0be5b3");
         ItemMeta meta = hu.getItemMeta();
-        meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "hungarian"));
+        if (meta != null) {
+            meta.setDisplayName(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "hungarian"));
+        }
         ArrayList<String> lore = new ArrayList<>();
-        if (LANGUAGE.hu()) {
+        if (Language.hu()) {
             lore.add(LanguageFilesUtils.getValue("hungarian", "selected"));
-            meta.setLocalizedName("x");
+            if (meta != null) {
+                meta.setLocalizedName("x");
+            }
         }else {
             lore.add(LanguageFilesUtils.getValue(plugin.getConfig().getString("language"), "CLICK to select"));
-            meta.setLocalizedName("hungarian");
+            if (meta != null) {
+                meta.setLocalizedName("hungarian");
+            }
         }
-        meta.setLore(lore);
+        if (meta != null) {
+            meta.setLore(lore);
+        }
         hu.setItemMeta(meta);
         return hu;
     }

@@ -11,9 +11,10 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class LanguageFilesUtils {
-    private static Map<File, Map<String, String>> languages = new HashMap<>();
+    private static final Map<File, Map<String, String>> languages = new HashMap<>();
 
     public static String getValue(String language, String valueName) {
         File langFile = new File(PickaxeStats.getInstance().getDataFolder() + "/languages", language + ".yml");
@@ -40,7 +41,9 @@ public class LanguageFilesUtils {
         try {
             if (!enFile.exists()) {
                 InputStream in = PickaxeStats.getInstance().getResource("english.yml");
-                Files.copy(in, enFile.toPath());
+                if (in != null) {
+                    Files.copy(in, enFile.toPath());
+                }
             }
         }catch (IOException e) {
             e.printStackTrace();
@@ -48,7 +51,9 @@ public class LanguageFilesUtils {
         try {
             if (!deFile.exists()) {
                 InputStream in = PickaxeStats.getInstance().getResource("german.yml");
-                Files.copy(in, deFile.toPath());
+                if (in != null) {
+                    Files.copy(in, deFile.toPath());
+                }
             }
         }catch (IOException e) {
             e.printStackTrace();
@@ -56,7 +61,9 @@ public class LanguageFilesUtils {
         try {
             if (!frFile.exists()) {
                 InputStream in = PickaxeStats.getInstance().getResource("french.yml");
-                Files.copy(in, frFile.toPath());
+                if (in != null) {
+                    Files.copy(in, frFile.toPath());
+                }
             }
         }catch (IOException e) {
             e.printStackTrace();
@@ -64,7 +71,9 @@ public class LanguageFilesUtils {
         try {
             if (!viFile.exists()) {
                 InputStream in = PickaxeStats.getInstance().getResource("vietnamese.yml");
-                Files.copy(in, viFile.toPath());
+                if (in != null) {
+                    Files.copy(in, viFile.toPath());
+                }
             }
         }catch (IOException e) {
             e.printStackTrace();
@@ -72,7 +81,9 @@ public class LanguageFilesUtils {
         try {
             if (!huFile.exists()) {
                 InputStream in = PickaxeStats.getInstance().getResource("hungarian.yml");
-                Files.copy(in, huFile.toPath());
+                if (in != null) {
+                    Files.copy(in, huFile.toPath());
+                }
             }
         }catch (IOException e) {
             e.printStackTrace();
@@ -80,7 +91,9 @@ public class LanguageFilesUtils {
         try {
             if (!poFile.exists()) {
                 InputStream in = PickaxeStats.getInstance().getResource("polish.yml");
-                Files.copy(in, poFile.toPath());
+                if (in != null) {
+                    Files.copy(in, poFile.toPath());
+                }
             }
         }catch (IOException e) {
             e.printStackTrace();
@@ -88,7 +101,9 @@ public class LanguageFilesUtils {
         try {
             if (!swFile.exists()) {
                 InputStream in = PickaxeStats.getInstance().getResource("swedish.yml");
-                Files.copy(in, swFile.toPath());
+                if (in != null) {
+                    Files.copy(in, swFile.toPath());
+                }
             }
         }catch (IOException e) {
             e.printStackTrace();
@@ -96,7 +111,9 @@ public class LanguageFilesUtils {
         try {
             if (!spFile.exists()) {
                 InputStream in = PickaxeStats.getInstance().getResource("spanish.yml");
-                Files.copy(in, spFile.toPath());
+                if (in != null) {
+                    Files.copy(in, spFile.toPath());
+                }
             }
         }catch (IOException e) {
             e.printStackTrace();
@@ -104,7 +121,9 @@ public class LanguageFilesUtils {
         try {
             if (!chFile.exists()) {
                 InputStream in = PickaxeStats.getInstance().getResource("chinese.yml");
-                Files.copy(in, chFile.toPath());
+                if (in != null) {
+                    Files.copy(in, chFile.toPath());
+                }
             }
         }catch (IOException e) {
             e.printStackTrace();
@@ -112,7 +131,9 @@ public class LanguageFilesUtils {
         try {
             if (!piFile.exists()) {
                 InputStream in = PickaxeStats.getInstance().getResource("pinyin.yml");
-                Files.copy(in, piFile.toPath());
+                if (in != null) {
+                    Files.copy(in, piFile.toPath());
+                }
             }
         }catch (IOException e) {
             e.printStackTrace();
@@ -120,16 +141,18 @@ public class LanguageFilesUtils {
         try {
             if (!czFile.exists()) {
                 InputStream in = PickaxeStats.getInstance().getResource("czech.yml");
-                Files.copy(in, czFile.toPath());
+                if (in != null) {
+                    Files.copy(in, czFile.toPath());
+                }
             }
         }catch (IOException e) {
             e.printStackTrace();
         }
-        for (File file : langFolder.listFiles()) {
+        for (File file : Objects.requireNonNull(langFolder.listFiles())) {
             Map<String, String> values = new HashMap<>();
             FileConfiguration lang = YamlConfiguration.loadConfiguration(file);
             for (String key : lang.getKeys(false)) {
-                for (String valueName : lang.getConfigurationSection(key).getKeys(false)) {
+                for (String valueName : Objects.requireNonNull(lang.getConfigurationSection(key)).getKeys(false)) {
                     String value = ChatColor.stripColor(lang.getString(key + "." + valueName));
                     values.put(valueName, value);
                 }

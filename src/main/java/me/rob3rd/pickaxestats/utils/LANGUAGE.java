@@ -2,82 +2,52 @@ package me.rob3rd.pickaxestats.utils;
 
 import me.rob3rd.pickaxestats.PickaxeStats;
 
-public class LANGUAGE {
+import java.util.Objects;
+
+public class Language {
+    private final static PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
+
     public static Boolean en() {
-        PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
-        if (plugin.getConfig().getString("language").equalsIgnoreCase("english")) {
-            return true;
-        }
-        return false;
+        return Objects.requireNonNull(plugin.getConfig().getString("language")).equalsIgnoreCase("english");
     }
+
     public static Boolean ge() {
-        PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
-        if (plugin.getConfig().getString("language").equalsIgnoreCase("german")) {
-            return true;
-        }
-        return false;
+        return Objects.requireNonNull(plugin.getConfig().getString("language")).equalsIgnoreCase("german");
     }
+
     public static Boolean fr() {
-        PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
-        if (plugin.getConfig().getString("language").equalsIgnoreCase("french")) {
-            return true;
-        }
-        return false;
+        return Objects.requireNonNull(plugin.getConfig().getString("language")).equalsIgnoreCase("french");
     }
+
     public static Boolean ch() {
-        PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
-        if (plugin.getConfig().getString("language").equalsIgnoreCase("chinese")) {
-            return true;
-        }
-        return false;
+        return Objects.requireNonNull(plugin.getConfig().getString("language")).equalsIgnoreCase("chinese");
     }
+
     public static Boolean pi() {
-        PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
-        if (plugin.getConfig().getString("language").equalsIgnoreCase("pinyin")) {
-            return true;
-        }
-        return false;
+        return Objects.requireNonNull(plugin.getConfig().getString("language")).equalsIgnoreCase("pinyin");
     }
+
     public static Boolean chz() {
-        PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
-        if (plugin.getConfig().getString("language").equalsIgnoreCase("chzech")) {
-            return true;
-        }
-        return false;
+        return Objects.requireNonNull(plugin.getConfig().getString("language")).equalsIgnoreCase("chzech");
     }
+
     public static Boolean vi() {
-        PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
-        if (plugin.getConfig().getString("language").equalsIgnoreCase("vietnamese")) {
-            return true;
-        }
-        return false;
+        return Objects.requireNonNull(plugin.getConfig().getString("language")).equalsIgnoreCase("vietnamese");
     }
+
     public static Boolean sw() {
-        PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
-        if (plugin.getConfig().getString("language").equalsIgnoreCase("swedish")) {
-            return true;
-        }
-        return false;
+        return Objects.requireNonNull(plugin.getConfig().getString("language")).equalsIgnoreCase("swedish");
     }
+
     public static Boolean sp() {
-        PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
-        if (plugin.getConfig().getString("language").equalsIgnoreCase("spanish")) {
-            return true;
-        }
-        return false;
+        return Objects.requireNonNull(plugin.getConfig().getString("language")).equalsIgnoreCase("spanish");
     }
+
     public static Boolean po() {
-        PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
-        if (plugin.getConfig().getString("language").equalsIgnoreCase("polish")) {
-            return true;
-        }
-        return false;
+        return Objects.requireNonNull(plugin.getConfig().getString("language")).equalsIgnoreCase("polish");
     }
+
     public static Boolean hu() {
-        PickaxeStats plugin = PickaxeStats.getPlugin(PickaxeStats.class);
-        if (plugin.getConfig().getString("language").equalsIgnoreCase("hungarian")) {
-            return true;
-        }
-        return false;
+        return Objects.requireNonNull(plugin.getConfig().getString("language")).equalsIgnoreCase("hungarian");
     }
 }

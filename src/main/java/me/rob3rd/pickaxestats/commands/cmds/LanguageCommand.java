@@ -2,7 +2,6 @@ package me.rob3rd.pickaxestats.commands.cmds;
 
 import me.rob3rd.pickaxestats.PickaxeStats;
 import me.rob3rd.pickaxestats.commands.SubCommand;
-import me.rob3rd.pickaxestats.menus.LanguageMenu;
 import me.rob3rd.pickaxestats.utils.LanguageFilesUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Sound;
