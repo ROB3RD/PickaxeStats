@@ -1,0 +1,16 @@
+name: PickaxeStats
+version: '${project.version}'
+main: me.rob3rd.pickaxestats.PickaxeStats
+api-version: 1.16
+authors: [ ROB3RD ]
+description: adds stats to the lore of every crafted pickaxe
+commands:
+  ps:
+    permission: ps
+permissions:
+  ps:
+    default: op
+    children:
+      ps.setlanguage: false
+  ps.setlanguage:
+    default: op
